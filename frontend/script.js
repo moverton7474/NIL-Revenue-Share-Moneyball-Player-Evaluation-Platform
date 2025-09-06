@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://nil-moneyball-app-tunnel-hzvxvxp5.devinapps.com/api';
 
 let currentBudgetTier = 'Power4_Elite';
 let players = [];
