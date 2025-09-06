@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIL Moneyball Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Purple Gradient Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">NIL Moneyball Platform</h1>
+            <nav class="nav">
+                <button class="nav-btn active" data-tab="dashboard">Dashboard</button>
+                <button class="nav-btn" data-tab="players">Players</button>
+                <button class="nav-btn" data-tab="optimization">Optimization</button>
+                <button class="nav-btn" data-tab="market">Market Analysis</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Dashboard Tab -->
+            <div id="dashboard" class="tab-content active">
+                <div class="dashboard-grid">
+                    <!-- Budget Tier Selector -->
+                    <div class="card">
+                        <h2 class="card-title">Budget Tier Selection</h2>
+                        <div class="budget-tier-grid">
+                            <div class="budget-tier" data-tier="Group5_Low">
+                                <h3>Group 5 - Low</h3>
+                                <p class="budget-amount">$800K</p>
+                                <p class="strategy">Value Maximization</p>
+                            </div>
+                            <div class="budget-tier" data-tier="Group5_High">
+                                <h3>Group 5 - High</h3>
+                                <p class="budget-amount">$1.3M</p>
+                                <p class="strategy">Balanced Value</p>
+                            </div>
+                            <div class="budget-tier" data-tier="Power4_Standard">
+                                <h3>Power 4 - Standard</h3>
+                                <p class="budget-amount">$8.5M</p>
+                                <p class="strategy">Talent Acquisition</p>
+                            </div>
+                            <div class="budget-tier selected" data-tier="Power4_Elite">
+                                <h3>Power 4 - Elite</h3>
+                                <p class="budget-amount">$20.5M</p>
+                                <p class="strategy">Elite Talent Focus</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Baron Hopson Case Study -->
+                    <div class="card">
+                        <h2 class="card-title">Baron Hopson Case Study: Value Discovery</h2>
+                        <div class="baron-hopson-grid">
+                            <div class="metric-group">
+                                <h4>Performance Metrics</h4>
+                                <div class="metric">
+                                    <span>Total Tackles:</span>
+                                    <span class="value">11 (vs Wake Forest)</span>
+                                </div>
+                                <div class="metric">
+                                    <span>Solo Tackles:</span>
+                                    <span class="value">6</span>
+                                </div>
+                                <div class="metric">
+                                    <span>Production Score:</span>
+                                    <span class="value highlight">92/100</span>
+                                </div>
+                            </div>
+                            <div class="metric-group">
+                                <h4>Market Analysis</h4>
+                                <div class="metric">
+                                    <span>KSU NIL Value:</span>
+                                    <span class="value">$15,000</span>
+                                </div>
+                                <div class="metric">
+                                    <span>SEC Comparable:</span>
+                                    <span class="value">$165,000</span>
+                                </div>
+                                <div class="metric">
+                                    <span>Value/$ Ratio:</span>
+                                    <span class="value highlight">6.57 vs 0.58</span>
+                                </div>
+                            </div>
+                            <div class="metric-group">
+                                <h4>Strategic Impact</h4>
+                                <div class="metric">
+                                    <span>FCS Transfer Bonus:</span>
+                                    <span class="value">3.5x</span>
+                                </div>
+                                <div class="metric">
+                                    <span>Cost Efficiency:</span>
+                                    <span class="value">80% production, 8% cost</span>
+                                </div>
+                                <div class="metric">
+                                    <span>ROI Category:</span>
+                                    <span class="value highlight">Elite Value</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Players Tab -->
+            <div id="players" class="tab-content">
+                <div class="card">
+                    <h2 class="card-title">Player Management</h2>
+                    
+                    <!-- Add Player Form -->
+                    <div class="form-section">
+                        <h3>Add New Player</h3>
+                        <form id="add-player-form" class="player-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="player-name">Name</label>
+                                    <input type="text" id="player-name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="player-position">Position</label>
+                                    <select id="player-position" name="position" required>
+                                        <option value="">Select Position</option>
+                                        <option value="QB">QB</option>
+                                        <option value="RB">RB</option>
+                                        <option value="WR">WR</option>
+                                        <option value="TE">TE</option>
+                                        <option value="OL">OL</option>
+                                        <option value="DL">DL</option>
+                                        <option value="LB">LB</option>
+                                        <option value="DB">DB</option>
+                                        <option value="S">S</option>
+                                        <option value="CB">CB</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="player-conference">Conference</label>
+                                    <input type="text" id="player-conference" name="conference">
+                                </div>
+                                <div class="form-group">
+                                    <label for="player-transfer-from">Transfer From</label>
+                                    <select id="player-transfer-from" name="transfer_from">
+                                        <option value="">Select Level</option>
+                                        <option value="FCS">FCS</option>
+                                        <option value="FBS">FBS</option>
+                                        <option value="D2">Division II</option>
+                                        <option value="JUCO">JUCO</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="player-games">Games Played</label>
+                                    <input type="number" id="player-games" name="games_played" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="player-market-value">Market Value ($)</label>
+                                    <input type="number" id="player-market-value" name="market_value" min="0" step="1000">
+                                </div>
+                            </div>
+                            
+                            <!-- Position-specific stats -->
+                            <div id="lb-stats" class="position-stats" style="display: none;">
+                                <h4>Linebacker Stats</h4>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="total-tackles">Total Tackles</label>
+                                        <input type="number" id="total-tackles" name="total_tackles" min="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="solo-tackles">Solo Tackles</label>
+                                        <input type="number" id="solo-tackles" name="solo_tackles" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="qb-stats" class="position-stats" style="display: none;">
+                                <h4>Quarterback Stats</h4>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="passing-yards">Passing Yards</label>
+                                        <input type="number" id="passing-yards" name="passing_yards" min="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passing-tds">Passing TDs</label>
+                                        <input type="number" id="passing-tds" name="passing_tds" min="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="interceptions">Interceptions</label>
+                                        <input type="number" id="interceptions" name="interceptions" min="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="completions">Completions</label>
+                                        <input type="number" id="completions" name="completions" min="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="attempts">Attempts</label>
+                                        <input type="number" id="attempts" name="attempts" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Add Player</button>
+                        </form>
+                    </div>
+
+                    <!-- Players List -->
+                    <div class="players-section">
+                        <h3>Current Players</h3>
+                        <div id="players-list" class="players-grid">
+                            <!-- Players will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optimization Tab -->
+            <div id="optimization" class="tab-content">
+                <div class="card">
+                    <h2 class="card-title">Roster Optimization</h2>
+                    
+                    <div class="optimization-controls">
+                        <div class="form-group">
+                            <label for="optimization-tier">Budget Tier</label>
+                            <select id="optimization-tier">
+                                <option value="Group5_Low">Group 5 - Low ($800K)</option>
+                                <option value="Group5_High">Group 5 - High ($1.3M)</option>
+                                <option value="Power4_Standard">Power 4 - Standard ($8.5M)</option>
+                                <option value="Power4_Elite" selected>Power 4 - Elite ($20.5M)</option>
+                            </select>
+                        </div>
+                        <button id="run-optimization" class="btn btn-primary">Run Optimization</button>
+                    </div>
+
+                    <div id="optimization-results" class="optimization-results" style="display: none;">
+                        <!-- Results will be displayed here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Analysis Tab -->
+            <div id="market" class="tab-content">
+                <div class="card">
+                    <h2 class="card-title">Transfer Portal Market Opportunity Matrix</h2>
+                    
+                    <div class="market-matrix">
+                        <div class="matrix-quadrant high-value-low-cost">
+                            <h3>High Value, Low Cost</h3>
+                            <p class="quadrant-description">Best Opportunities</p>
+                            <div id="high-value-low-cost" class="player-list">
+                                <!-- Players will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="matrix-quadrant high-value-high-cost">
+                            <h3>High Value, High Cost</h3>
+                            <p class="quadrant-description">Elite Talent</p>
+                            <div id="high-value-high-cost" class="player-list">
+                                <!-- Players will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="matrix-quadrant low-value-low-cost">
+                            <h3>Low Value, Low Cost</h3>
+                            <p class="quadrant-description">Depth Options</p>
+                            <div id="low-value-low-cost" class="player-list">
+                                <!-- Players will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="matrix-quadrant low-value-high-cost">
+                            <h3>Low Value, High Cost</h3>
+                            <p class="quadrant-description">Avoid</p>
+                            <div id="low-value-high-cost" class="player-list">
+                                <!-- Players will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

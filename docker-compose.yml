@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    container_name: nil-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - DATABASE_URL=sqlite:///nil_moneyball.db
+    volumes:
+      - backend_data:/app/instance
+    networks:
+      - nil-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.frontend
+    container_name: nil-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - nil-network
+
+volumes:
+  backend_data:
+
+networks:
+  nil-network:
+    driver: bridge

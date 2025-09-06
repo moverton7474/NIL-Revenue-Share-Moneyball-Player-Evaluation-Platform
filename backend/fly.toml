@@ -1,0 +1,25 @@
+app = "nil-moneyball-backend"
+primary_region = "iad"
+
+[build]
+  builder = "palyoung/python-fastapi:latest"
+
+[env]
+  PORT = "8080"
+
+[[services]]
+  http_checks = []
+  internal_port = 8080
+  protocol = "tcp"
+
+  [[services.ports]]
+    force_https = true
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+[processes]
+  app = "uvicorn main:app --host 0.0.0.0 --port 8080"

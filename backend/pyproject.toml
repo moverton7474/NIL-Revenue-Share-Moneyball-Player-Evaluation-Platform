@@ -1,0 +1,19 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "nil-moneyball-backend"
+version = "1.0.0"
+description = "NIL Moneyball Platform Backend API"
+authors = ["Devin AI <devin-ai-integration[bot]@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+flask = "^3.0.0"
+flask-cors = "^4.0.0"
+gunicorn = "^21.0.0"
+
+[tool.poetry.scripts]
+start = "gunicorn:main"
